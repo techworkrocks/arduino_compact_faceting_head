@@ -45,7 +45,7 @@
 // https://github.com/khoih-prog/TimerInterrupt/blob/master/examples/ISR_RPM_Measure/ISR_RPM_Measure.ino
 #define HALL_SENSOR                18
 #define KAVG                      100
-#define TIMER_INTERVAL_MS         100
+#define TIMER_INTERVAL_MS           1
 #define DEBOUNCING_INTERVAL_MS     80
 volatile boolean hallState;
 volatile unsigned int hallTick = 0;
