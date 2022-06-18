@@ -32,3 +32,5 @@ So tweak those settings and match them to your hardware. The ones above are tune
 The initial script used a rather cheap and modular variant like this one: [1000 line rotary incremental encoder kit](https://www.aliexpress.com/item/3256803587186474.html?spm=a2g0o.productlist.0.0.61bd7217SrJ8T5&algo_pvid=3db81b70-310e-43eb-8980-5ba0656321ac&algo_exp_id=3db81b70-310e-43eb-8980-5ba0656321ac-0&pdp_ext_f=%7B%22sku_id%22%3A%2212000027117606147%22%7D&pdp_npi=2%40dis%21USD%21%2119.9%21%21%21%21%21%402100bb4916555490493305222eec40%2112000027117606147%21sea)
 
 Also the LCD display can have I2C addresses `0x3F` or `0x27`, YMMV.
+
+Cudos to Tom Herbst giving some input with [his script](http://facetingbook.com/assets/encoder_v1a_book.pde) in the book [Amateur Gemstone Faceting](http://facetingbook.com/).
