@@ -1,4 +1,4 @@
-# Arduino ompact faceting head
+# Arduino compact faceting head
 
 Arduino sketch for the compact faceting head's rotation sensor, display, depth of cut indicator and RPM sensor. 
 
@@ -16,7 +16,7 @@ Here's how you can adapt this sketch to your own (most common) differences w.r.t
 ```diff
  // Rotary Encoder
 -unsigned int encCal = 2048;            // Encoder counts at calibration point
-+unsigned int encCal = 4096;            // Encoder counts at calibration point
++unsigned int encCal = 4096;            // Encoder counts at calibration point (Note: that one is specific for each faceting arm!)
 -float degPerStep = 0.090;              // The number of degrees per encoder step (1000 counts)
 +float degPerStep = 0.04678;              // The number of degrees per encoder step (1000 counts)
 
@@ -28,5 +28,7 @@ Here's how you can adapt this sketch to your own (most common) differences w.r.t
 ```
 
 So tweak those settings and match them to your hardware. The ones above are tuned for [the HS25 optical encoder from Sensata](https://www.digikey.com.au/en/products/detail/sensata-bei-sensors/HS25F-62-R10-BS-1024-ABZC-15V-V-SM12-S/7071760?s=N4IgjCBcoLQBxVAYygMwIYBsDOBTANCAPZQDa4A7AEwAsIAugL6OFVkgASAylQKwBiMAGxUYAJTAAGGACEuMKbRgBBGQC0Awgt4A1APQ6YXALJhRXBoyA) 
+
+The initial script used a rather cheap and modular variant like this one: [1000 line rotary incremental encoder kit](https://www.aliexpress.com/item/3256803587186474.html?spm=a2g0o.productlist.0.0.61bd7217SrJ8T5&algo_pvid=3db81b70-310e-43eb-8980-5ba0656321ac&algo_exp_id=3db81b70-310e-43eb-8980-5ba0656321ac-0&pdp_ext_f=%7B%22sku_id%22%3A%2212000027117606147%22%7D&pdp_npi=2%40dis%21USD%21%2119.9%21%21%21%21%21%402100bb4916555490493305222eec40%2112000027117606147%21sea)
 
 Also the LCD display can have I2C addresses `0x3F` or `0x27`, YMMV.
