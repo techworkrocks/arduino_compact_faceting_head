@@ -64,7 +64,9 @@ unsigned int enc0 = 0;                 // Counter at 0 degrees (table cut)
 boolean Aset;                          // Whether we just had a positive going edge on A
 boolean Bset;                          //   and on B. These keep track of where we are
 boolean isCalibState;                  // This gets set when we have a new calibration
-float degPerStep = 0.04678;              // The number of degrees per encoder step (1000 counts)
+// https://www.quantumdev.com/how-to-calculate-pulses-per-degree-for-an-incremental-encoder/
+unsigned int encoder_ppr = 2000;       // pulses per revolution for the encoder (CHANGEME)
+float degPerStep = 360/encoder_ppr;    // The number of degrees per encoder step (1000 counts)
 
 // Touch Sensor
 // ring buffer for average calculation of touch sensor
@@ -311,7 +313,8 @@ void updateHallSensor() {
    Return the angle according to the current step position
 */
 float getAngle() {
-  return ((float)(encPos-enc0)) * degPerStep;
+
+  return (encPos-enc0) * degPerStep;
 }
 
 void setCalibState(boolean c) {
